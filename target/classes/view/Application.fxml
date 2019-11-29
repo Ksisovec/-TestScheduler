@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <children>
+      <TabPane layoutX="5.0" layoutY="75.0" prefHeight="316.0" prefWidth="845.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="80.0">
+        <tabs>
+          <Tab text="Задачи">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="834.0">
+                  <TableView fx:id="tasksTable" prefHeight="254.0" prefWidth="835.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <columns>
+                          <TableColumn fx:id="isdone" maxWidth="75.0" prefWidth="75.0" text="Выполнена" />
+                          <TableColumn fx:id="name" minWidth="160.0" prefWidth="160.0" text="Задача" />
+                          <TableColumn fx:id="startDate" minWidth="160.0" prefWidth="160.0" text="Дата начала" />
+                          <TableColumn fx:id="endDate" minWidth="160.0" prefWidth="160.0" text="Дата окончания" />
+                          <TableColumn fx:id="doneDate" minWidth="160.0" prefWidth="160.0" text="Дата выполнения" />
+                      </columns>
+                  </TableView>
+
+<!--                  <fx:include source="TasksTable.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />-->
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="План">
+            <content>
+              <AnchorPane fx:id="planPane" minHeight="0.0" minWidth="0.0" prefHeight="255.0" prefWidth="835.0">
+                     <ComboBox fx:id="monthBox" prefHeight="28.0" prefWidth="150.0" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
+                         <TableView fx:id="planTable" prefHeight="400.0" prefWidth="829.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                             <columns>
+                             </columns>
+                         </TableView>
+                     <Label layoutX="14.0" layoutY="6.0" text="Месяц" />
+              </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <ComboBox fx:id="workerNames" layoutX="103.0" layoutY="14.0" prefWidth="150.0" />
+      <Label fx:id="nameLabel" layoutX="14.0" layoutY="20.0" />
+   </children>
+</AnchorPane>
